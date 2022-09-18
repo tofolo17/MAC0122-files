@@ -1,4 +1,4 @@
-from stack import Pilha
+from classes.stack import Pilha
 
 
 def main():

@@ -1,4 +1,4 @@
-from stack import Pilha
+from classes.stack import Pilha
 
 
 def main():
@@ -44,9 +44,23 @@ def pal_internet(s):
     while not pilha.vazia():
         reversed_text += pilha.desempilhe()
 
-    print(s, reversed_text)
-
     return s == reversed_text
+
+
+def pal_mencarini(s):
+    pil = Pilha()
+    desempilha = Pilha()
+
+    for letra in s:
+        pil.empilhe(letra)
+    sentido1 = pil.dados.copy()
+
+    while pil.vazia() is False:
+        desempilha.empilhe(pil.topo())
+        pil.desempilhe()
+    sentido2 = desempilha.dados
+
+    return sentido1 == sentido2
 
 
 main()
