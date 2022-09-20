@@ -4,15 +4,12 @@ class Array2D:
         self.size = self.shape[0] * self.shape[1]
         self.data = [val] * self.size
 
-    # ---------------------------------------------------------------
     def __getitem__(self, key):
         return self.data[self.shape[1] * key[0] + key[1]]
 
-    # ---------------------------------------------------------------
     def __setitem__(self, key, valor):
         self.data[self.shape[1] * key[0] + key[1]] = valor
 
-    # ---------------------------------------------------------------
     def __str__(self):
         s = ""
         for i in range(1, self.size + 1):
@@ -23,6 +20,34 @@ class Array2D:
 
         return s
 
+    def __add__(self, other):
+        # Assume Array2D's de mesmo shape
+        res = Array2D(self.shape, 0)
+        for i in range(len(self.data)):
+            if type(other) == int or type(other) == float:
+                res.data[i] = self.data[i] + other
+            else:
+                res.data[i] = self.data[i] + other.data[i]
+        return res
 
-my_array = Array2D((2, 3), 3)
-print(my_array)
+    def __sub__(self, other):
+        # Assume Array2D's de mesmo shape
+        res = Array2D(self.shape, 0)
+        for i in range(len(self.data)):
+            if type(other) == int or type(other) == float:
+                res.data[i] = self.data[i] - other
+            else:
+                res.data[i] = self.data[i] - other.data[i]
+        return res
+
+    def __radd__(self, other):
+        return self + other
+
+    def __rsub__(self, other):
+        return -(self - other)
+
+    def __neg__(self):
+        res = Array2D(self.shape, 0)
+        for i in range(len(self.data)):
+            res.data[i] = -self.data[i]
+        return res
