@@ -4,6 +4,18 @@ class Array2D:
         self.size = self.shape[0] * self.shape[1]
         self.data = [val] * self.size
 
+    def reshape(self, shape):
+        a = Array2D(shape, 0)
+        a.data = self.data
+
+        return a
+
+    def copy(self):
+        a = Array2D(self.shape, 0)
+        a.data = self.data[:]
+
+        return a
+
     def __getitem__(self, key):
         return self.data[self.shape[1] * key[0] + key[1]]
 
