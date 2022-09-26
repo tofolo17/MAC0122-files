@@ -33,7 +33,10 @@ class Array2D:
         self.size = self.shape[0] * self.shape[1]
         self.data = [val] * self.size
 
-    def reshape(self, shape):
+    def carregue(self, data):
+        self.data = data
+
+    def reshape(self, shape: tuple):
         a = Array2D(shape, 0)
         a.data = self.data
 
