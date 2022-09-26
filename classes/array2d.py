@@ -1,3 +1,32 @@
+# Testes de aula obrigatórios para envio
+
+def main():
+    print("Testes da classe Array2D\n")
+
+    a = Array2D((2, 3), 3)  # cria Array2D com valor inicial 3
+    print(f'teste 1: Criação do Array2D a:')
+    print(a)
+    print(f'shape: {a.shape}')
+    print(f'size : {a.size}')
+    print(f'data : {a.data}')
+    print()
+
+    b = Array2D((2, 3), 1.7)  # criar Array2D com valor inicial 1.7
+    print(f'teste 2: Criação do Array2D b:')
+    print(b)
+    print(f'shape: {b.shape}')
+    print(f'size : {b.size}')
+    print(f'data : {b.data}')
+    print()
+
+    print(f'teste 3: a[0,1] + 100 é: {a[0, 1] + 100}')  # acesso direto usando tupla: use o método __getitem__
+    print()
+
+    a[1, 1] = -1  # atribuição usando tupla: use o método __setitem__
+    print(f'teste 4: Array2D a:')
+    print(a)
+
+
 class Array2D:
     def __init__(self, shape: tuple, val):
         self.shape = shape
@@ -51,3 +80,7 @@ class Array2D:
         for i in range(len(self.data)):
             res.data[i] = -self.data[i]
         return res
+
+
+if __name__ == '__main__':
+    main()

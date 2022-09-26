@@ -1,3 +1,21 @@
+# Testes de aula obrigatórios para envio
+
+def main():
+    print("Testes da classe Array1D\n")
+
+    x = Array1D(3)
+    print(f"x = {x}")
+
+    y = Array1D([1, 2, 3])
+    print(f"y = {y}")
+
+    x = x + y
+    print(f"x = {x}")
+
+    x = x + y
+    print(f"x = {x}")
+
+
 class Array1D:
     def __init__(self, d):
         if type(d) is int:
@@ -46,3 +64,7 @@ class Array1D:
         for i in range(n):
             res.dados[i] = -self.dados[i]
         return res
+
+
+if __name__ == '__main__':
+    main()
