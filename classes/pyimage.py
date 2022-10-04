@@ -7,10 +7,10 @@ def main():
 
     print()
 
-    print(img1.paste(img2, 2, 2))
-    print(img1.paste(img2, -2, 0))
+    print(img1.paste_bruta(img2, 2, 2))
+    print(img1.paste_bruta(img2, -2, 0))
 
-    print(img1.paste(img2, -1, 0))
+    print(img1.paste_bruta(img2, -1, 0))
 
 
 class PyImage:
@@ -30,19 +30,20 @@ class PyImage:
                 c += 1
             self.data.append(linha)
 
-    def paste(self, other, t_lin, t_col):
+    def paste_bruta(self, other, t_lin, t_col):
         # Exceções
         if t_lin > self.linhas - 1 or t_col > self.colunas - 1:
             return self
         if t_lin + other.linhas - 1 < 0 or t_col + other.colunas < 0:
             return self
 
-        # Intersecções
+        # Intersecções garantidas
         for i in range(other.linhas):
             inter_l = t_lin + i
             for j in range(other.colunas):
                 inter_c = t_col + j
 
+                # Verifica intersecção
                 if 0 <= inter_l < self.linhas and 0 <= inter_c <= self.colunas:
                     print(inter_l, inter_c)  # Verifica intersecção
 
