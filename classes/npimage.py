@@ -2,31 +2,18 @@ import numpy as np
 
 
 def main():
-    # Declarações
-    a = NPImagem((3, 3), 0)
-    b = NPImagem((3, 3), 1)
+    arr = np.array(range(9)).reshape(3, 3)
+    a = NPImagem((), arr)
 
-    print('Testes pinte_rect()')
-    print(f'Imagem A:\n{a}\n')
+    brr = np.array(range(16)).reshape(4, 4)
+    b = NPImagem((), brr)
 
-    print(f'Imagem A pintada:')
-    a.pinte_rect(1, 1, 7, 7, 1)
-    print(f'{a}\n')
+    print(a.data)
+    print(b.data)
 
-    print('Testes paste()')
-    print(f'Exceções')
-    a.paste(b, 3, 3)
-    print(f'paste() após a imagem:\n{a}\n')
+    print()
 
-    a.paste(b, -3, -3)
-    print(f'paste() antes a imagem:\n{a}\n')
-
-    a = NPImagem((0, 0), np.array(range(9)).reshape(3, 3))
-    b = NPImagem((0, 0), np.array(range(9)).reshape(3, 3))
-
-    print(f'Intersecções')
-    a.paste(b, -1, 1)
-    print(f'Finalmente:\n   {a}')
+    print(a + b)
 
 
 class NPImagem:
@@ -103,16 +90,6 @@ class NPImagem:
             inf = sl - 1
         # Se não, está em self
 
-        # Coordenadas que restringem intersecção
-        print('Para o self:')
-        print(f'(sup, esq) = ({sup},{esq})')
-        print(f'(inf, dire) = ({inf},{dire})\n')
-
-        # Mesmas coordenadas em relação ao other
-        print('Para o other:')
-        print(f'(sup, esq) = ({sup - sup_o},{esq - esq_o})')
-        print(f'(inf, dire) = ({inf - sup_o},{dire - esq_o})\n')
-
         # Declarações do other
         o_sup = sup - sup_o
         o_esq = esq - esq_o
@@ -120,6 +97,48 @@ class NPImagem:
         o_dire = dire - esq_o
 
         self.data[sup:inf + 1, esq:dire + 1] = other.data[o_sup:o_inf + 1, o_esq:o_dire + 1]
+
+    def get_pos(self, key):
+        return key // self.shape[1], key % self.shape[1]
+
+    # TODO: reestruturar código. Está errado! É pra somar só nas coordenadas correspondentes, sem realocação.
+    def __add__(self, other):
+        s_size = self.shape[0] * self.shape[1]
+        if type(other) in [int, float]:
+            for i in range(s_size):
+                ls, cs = self.get_pos(i)
+
+                self.data[ls, cs] += other
+        else:
+            o_size = other.shape[0] * other.shape[1]
+            for i in range(min(o_size, s_size)):
+                ls, cs = self.get_pos(i)
+                lo, co = other.get_pos(i)
+
+                self.data[ls, cs] += other.data[lo, co]
+
+        return NPImagem((), self.data[:])
+
+    def __mul__(self, other):
+        s_size = self.shape[0] * self.shape[1]
+        if type(other) in [int, float]:
+            for i in range(s_size):
+                ls, cs = self.get_pos(i)
+
+                self.data[ls, cs] *= other
+        else:
+            o_size = other.shape[0] * other.shape[1]
+            for i in range(min(o_size, s_size)):
+                ls, cs = self.get_pos(i)
+                lo, co = other.get_pos(i)
+
+                self.data[ls, cs] *= other.data[lo, co]
+
+        return NPImagem((), self.data[:])
+
+    # Só isso mesmo?
+    def blend(self, other, alpha=0.5):
+        return self * alpha + other * (1 - alpha)
 
 
 if __name__ == '__main__':
