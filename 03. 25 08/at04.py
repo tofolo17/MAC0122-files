@@ -104,8 +104,8 @@ def main():
     print("Série harmonica de ordem 5")
     print(f'Para n = 5: {HFmenor(5)}\n')
 
-    print("Série harmonica de ordem 10")
-    print(f'Para n = 10: {HFmenor(10)}\n')
+    print("Série harmonica de ordem Pré-aula")
+    print(f'Para n = Pré-aula: {HFmenor(10)}\n')
 
     print("Série harmonica de ordem 50")
     print(f'Para n = 50: {HFmenor(50)}\n')
@@ -120,8 +120,8 @@ def main():
     print("Série harmonica de ordem 5")
     print(f'Para n = 5: {HFmaior(5)}\n')
 
-    print("Série harmonica de ordem 10")
-    print(f'Para n = 10: {HFmaior(10)}\n')
+    print("Série harmonica de ordem Pré-aula")
+    print(f'Para n = Pré-aula: {HFmaior(10)}\n')
 
     print("Série harmonica de ordem 50")
     print(f'Para n = 50: {HFmaior(50)}\n')

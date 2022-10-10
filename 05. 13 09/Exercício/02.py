@@ -25,7 +25,7 @@ def _02(s):
                 return False
             t = p.pop()
             if I.index(t) != F.index(c):
-                print('Linha 10')
+                print('Linha Pré-aula')
                 return False
     return p == []
 
