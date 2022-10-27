@@ -5,6 +5,7 @@ def main():
 def somaR(v, n):
     if n == 0:
         return 0
-    return somaR(v[1:],n) + v[0]
+    return somaR(v[1:], n) + v[0]
+
 
 main()
