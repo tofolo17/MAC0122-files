@@ -70,7 +70,9 @@ def hanoiB(n, origem, auxiliar, destino, mov=0):
     mov = hanoiB(n - 1, origem, destino, auxiliar, mov)
 
     # Quantos movimentos foram feitos até agora, mais 1.
-    print(f"{mov + 1}: mova o disco {n} do pino {origem} para o pino {destino}")
+    print(
+        f"{mov + 1}: mova o disco {n} do pino {origem} para o pino {destino}"
+    )
     return hanoiB(n - 1, auxiliar, origem, destino, mov + 1)
 
 
@@ -82,11 +84,20 @@ def hanoiC(n, origem, auxiliar, destino, mov=0, level=0):
 
     mov = hanoiC(n - 1, origem, destino, auxiliar, mov, level + 1)
 
-    print(TAB * (level + 1) + f"hanoi({n - 1},'{origem}','{destino}','{auxiliar}') = {2 ** (n - 1) - 1}")
-    print(TAB * (level + 1) + f"{mov + 1}: mova o disco {n} do pino {origem} para o pino {destino}")
+    print(
+        TAB * (level + 1)
+        + f"hanoi({n - 1},'{origem}','{destino}','{auxiliar}') = {2 ** (n - 1) - 1}"
+    )
+    print(
+        TAB * (level + 1)
+        + f"{mov + 1}: mova o disco {n} do pino {origem} para o pino {destino}"
+    )
 
     mov = hanoiC(n - 1, auxiliar, origem, destino, mov + 1, level + 1)
-    print(TAB * (level + 1) + f"hanoi({n - 1},'{auxiliar}','{origem}','{destino}') = {2 ** (n - 1) - 1}")
+    print(
+        TAB * (level + 1)
+        + f"hanoi({n - 1},'{auxiliar}','{origem}','{destino}') = {2 ** (n - 1) - 1}"
+    )
 
     return mov
 

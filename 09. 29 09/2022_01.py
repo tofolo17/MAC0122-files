@@ -1,5 +1,11 @@
 def main():
-    pol = [1.1, 1.6, '-', 3, '+']  # Os valores da lista eram strings ou floats?
+    pol = [
+        1.1,
+        1.6,
+        '-',
+        3,
+        '+',
+    ]  # Os valores da lista eram strings ou floats?
 
     print(calcule(pol))
 

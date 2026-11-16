@@ -96,7 +96,9 @@ class NPImagem:
         o_inf = inf - sup_o
         o_dire = dire - esq_o
 
-        self.data[sup:inf + 1, esq:dire + 1] = other.data[o_sup:o_inf + 1, o_esq:o_dire + 1]
+        self.data[sup : inf + 1, esq : dire + 1] = other.data[
+            o_sup : o_inf + 1, o_esq : o_dire + 1
+        ]
 
     def get_pos(self, key):
         return key // self.shape[1], key % self.shape[1]

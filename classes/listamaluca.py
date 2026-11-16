@@ -40,7 +40,7 @@ class ListaMaluca:
             n += [self.data[i]]
             n += [other.data[i]]
 
-        n += maior.data[len(menor.data):]
+        n += maior.data[len(menor.data) :]
         return ListaMaluca(n)
 
     def __mul__(self, other):

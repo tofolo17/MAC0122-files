@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 """
-    Atividade 06 - classe Horario
+Atividade 06 - classe Horario
 
-    Indique o código do Grupo (deveria ser o mesmo da computador
-    que você usou no CEC, como A, B, C etc.).
+Indique o código do Grupo (deveria ser o mesmo da computador
+que você usou no CEC, como A, B, C etc.).
 
-    GRUPO: N
+GRUPO: N
 
-    Liste a seguir os nomes completos dos membros do time que participaram dessa atividade presencialmente:
+Liste a seguir os nomes completos dos membros do time que participaram dessa atividade presencialmente:
 
-    - Gustavo Valencio Tofolo
-    - Vicenzo Carlim de Sousa
-    - João Victor Talma Gomes de Jesus
+- Gustavo Valencio Tofolo
+- Vicenzo Carlim de Sousa
+- João Victor Talma Gomes de Jesus
 
 """
 
@@ -97,38 +97,56 @@ class Horario:
         return f"{str_h}:{str_m}:{str_s}"
 
     def __eq__(self, other):
-        return self.dados[0] == other.dados[0] and self.dados[1] == other.dados[1] and self.dados[2] == other.dados[2]
+        return (
+            self.dados[0] == other.dados[0]
+            and self.dados[1] == other.dados[1]
+            and self.dados[2] == other.dados[2]
+        )
 
     def __lt__(self, other):
-        return self.dados[0] < other.dados[0] or (
-                self.dados[0] == other.dados[0] and self.dados[1] < other.dados[1]) or (
-                       self.dados[0] == other.dados[0] and self.dados[1] == other.dados[1] and self.dados[2] <
-                       other.dados[2])
+        return (
+            self.dados[0] < other.dados[0]
+            or (
+                self.dados[0] == other.dados[0]
+                and self.dados[1] < other.dados[1]
+            )
+            or (
+                self.dados[0] == other.dados[0]
+                and self.dados[1] == other.dados[1]
+                and self.dados[2] < other.dados[2]
+            )
+        )
 
     def __qt__(self, other):
-        return self.dados[0] > other.dados[0] or (
-                self.dados[0] == other.dados[0] and self.dados[1] > other.dados[1]) or (
-                       self.dados[0] == other.dados[0] and self.dados[1] == other.dados[1] and self.dados[2] >
-                       other.dados[2])
+        return (
+            self.dados[0] > other.dados[0]
+            or (
+                self.dados[0] == other.dados[0]
+                and self.dados[1] > other.dados[1]
+            )
+            or (
+                self.dados[0] == other.dados[0]
+                and self.dados[1] == other.dados[1]
+                and self.dados[2] > other.dados[2]
+            )
+        )
 
     def __add__(self, other):
         if type(other) == Horario:
             return Horario(
                 self.dados[0] + other.dados[0],
                 self.dados[1] + other.dados[1],
-                self.dados[2] + other.dados[2]
+                self.dados[2] + other.dados[2],
             )
         elif type(other) == int:
-            return Horario(
-                self.dados[0] + other
-            )
+            return Horario(self.dados[0] + other)
         else:
             f_horario = trata_hora(other)
 
             return Horario(
                 self.dados[0] + f_horario.dados[0],
                 self.dados[1] + f_horario.dados[1],
-                self.dados[2] + f_horario.dados[2]
+                self.dados[2] + f_horario.dados[2],
             )
 
     def __radd__(self, other):
@@ -146,12 +164,10 @@ class Horario:
             return Horario(
                 self.dados[0] - other.dados[0],
                 self.dados[1] - other.dados[1],
-                self.dados[2] - other.dados[2]
+                self.dados[2] - other.dados[2],
             )
         elif type(other) == int:
-            return Horario(
-                self.dados[0] - other
-            )
+            return Horario(self.dados[0] - other)
         else:
             f_horario = trata_hora(other)
 
@@ -161,7 +177,7 @@ class Horario:
             return Horario(
                 self.dados[0] - f_horario.dados[0],
                 self.dados[1] - f_horario.dados[1],
-                self.dados[2] - f_horario.dados[2]
+                self.dados[2] - f_horario.dados[2],
             )
 
     def __rsub__(self, other):
@@ -175,6 +191,7 @@ class Horario:
 # ===================================================================
 #  Insira as funções que desejar aqui. CUIDADO com a tabulação.
 # ===================================================================
+
 
 def h_min(seq):
     menor = seq[0]
@@ -191,9 +208,7 @@ def trata_hora(f):
     minutos = float_part * 60
     segundos = (minutos - int(minutos)) * 60
 
-    return Horario(
-        hora, minutos, segundos
-    )
+    return Horario(hora, minutos, segundos)
 
 
 if __name__ == '__main__':

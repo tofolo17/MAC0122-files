@@ -1,34 +1,33 @@
 """
-    Atividade 04 - classe Fraction
+Atividade 04 - classe Fraction
 
-    Indique o código do Grupo (deveria ser o mesmo da computador
-    que você usou no CEC, como A, B, C etc.).
+Indique o código do Grupo (deveria ser o mesmo da computador
+que você usou no CEC, como A, B, C etc.).
 
-    GRUPO: S
+GRUPO: S
 
-    Liste a seguir os nomes completos dos membros do time que participaram dessa atividade presencialmente:
+Liste a seguir os nomes completos dos membros do time que participaram dessa atividade presencialmente:
 
-    - Gustavo Valencio Tofolo
-    -Rennisson Davi D. Alves
-    - Vicenzo Carlim de Sousa
+- Gustavo Valencio Tofolo
+-Rennisson Davi D. Alves
+- Vicenzo Carlim de Sousa
 
 """
-
 
 # ===================================================================
 
 
 def main():
     """
-        Programa main usado para teste da classe Fraction
-        e pode ser usada também para testar as suas funções
-        HFmaior e HFmenor, que devem usar obrigatoriamente a
-        classe Fraction.
+    Programa main usado para teste da classe Fraction
+    e pode ser usada também para testar as suas funções
+    HFmaior e HFmenor, que devem usar obrigatoriamente a
+    classe Fraction.
 
-        Execute esse programa antes de escrever suas funções e
-        estude a saída de cada teste da classe Fraction abaixo,
-        lendo os comentários para entender o comportamento da classe
-        antes de escrever suas funções HFmaior() e HFmenor().
+    Execute esse programa antes de escrever suas funções e
+    estude a saída de cada teste da classe Fraction abaixo,
+    lendo os comentários para entender o comportamento da classe
+    antes de escrever suas funções HFmaior() e HFmenor().
     """
 
     # Criação de objetos do tipo Fraction
@@ -138,12 +137,13 @@ def main():
 #  PARTE I: classe Fraction
 # ===================================================================
 
+
 class Fraction:
     """
-        A classe Fraction representa uma fração.
-        Uma fração é constituída por um numerador e um denominador,
-        ambos inteiros, como por exemplo 2/5 (dois quintos),
-        onde 2 é o numerador e 5 o denominador.
+    A classe Fraction representa uma fração.
+    Uma fração é constituída por um numerador e um denominador,
+    ambos inteiros, como por exemplo 2/5 (dois quintos),
+    onde 2 é o numerador e 5 o denominador.
     """
 
     def __init__(self, n, d):
@@ -194,7 +194,7 @@ class Fraction:
         return f"{self.num // _mdc}/{self.den // _mdc}"
 
     def get(self):
-        """ (Fraction) -> int, int
+        """(Fraction) -> int, int
         Recebe uma referência `self` a um objeto da classe Fraction e
         retorna a tupla formada pelo seu numerador (em self.num) e
         denominador (em self.den).
@@ -204,7 +204,7 @@ class Fraction:
         return self.num // _mdc, self.den // _mdc
 
     def put(self, n, d):
-        """ (Fraction, int, int) -> None
+        """(Fraction, int, int) -> None
         Recebe uma referência `self` e dois inteiros, n e d, e
         carrega os atributos self.num e self.den com esses valores.
         """
@@ -212,7 +212,7 @@ class Fraction:
         self.den = d
 
     def mul(self, other):
-        """ (Fraction, Fraction) -> Fraction
+        """(Fraction, Fraction) -> Fraction
         Recebe uma referência `self` e outra referência `other`,
         para dois objetos da classe Fraction. Retorna uma nova fração com o
         resultado da multiplicação self * other
@@ -229,7 +229,7 @@ class Fraction:
         return Fraction(num, den)
 
     def div(self, other):
-        """ (Fraction, Fraction) -> Fraction
+        """(Fraction, Fraction) -> Fraction
         Recebe uma referência `self` e outra referência `other`,
         para dois objetos da classe Fraction. Retorna uma nova fração com o
         resultado da divisão self / other
@@ -243,7 +243,7 @@ class Fraction:
         return Fraction(num, den)
 
     def add(self, other):
-        """ (Fraction, Fraction) -> Fraction
+        """(Fraction, Fraction) -> Fraction
         Recebe uma referência `self` e outra referência `other`,
         para dois objetos da classe Fraction. Retorna uma nova fração com o
         resultado da soma self + other
@@ -257,7 +257,7 @@ class Fraction:
         return Fraction(num, den)
 
     def sub(self, other):
-        """ (Fraction, Fraction) -> Fraction
+        """(Fraction, Fraction) -> Fraction
         Recebe uma referência `self` e outra referência `other`,
         para dois objetos da classe Fraction. Retorna uma nova fração com o
         resultado da subtração self - other
@@ -275,8 +275,9 @@ class Fraction:
 # Parte II: Uso da classe Fraction
 # ===================================================================
 
+
 def HFmaior(n):
-    """ (int) -> Fraction
+    """(int) -> Fraction
 
     Recebe um número inteiro positivo e retorna o número harmônico
     de ordem n. O número harmônico é calculado somando do maior
@@ -292,8 +293,9 @@ def HFmaior(n):
 
 # ===================================================================
 
+
 def HFmenor(n):
-    """ (int) -> Fraction
+    """(int) -> Fraction
     Recebe um número inteiro positivo e retorna o número harmônico
     de ordem n. O número harmônico é calculado somando do menor para
     o maior termo. Retorna objeto tipo Fraction.
@@ -309,6 +311,7 @@ def HFmenor(n):
 # ===================================================================
 #  Escreva a seguir outras funções que desejar
 # ===================================================================
+
 
 def mdc(m, n):
     """

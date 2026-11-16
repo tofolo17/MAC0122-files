@@ -132,7 +132,9 @@ def main():
     pause()  # aprecie a paisagem
 
     # mais __setitem__()
-    print("\nmais teste __setitem__(): chaves devem ser comparáveis por <, <=,...")
+    print(
+        "\nmais teste __setitem__(): chaves devem ser comparáveis por <, <=,..."
+    )
     dB['na'] = 1
     dB['vida'] = 1
     print(f"dB:\n{dB}")
@@ -149,7 +151,8 @@ def main():
     # teste __iter__()
     print("\nteste __iter__(): usado para clonar d")
     clone = DicioB()
-    for chave in dB: clone[chave] = dB[chave]
+    for chave in dB:
+        clone[chave] = dB[chave]
     print(f"clone:\n{clone}")
     pause()  # aprecie a paisagem
 

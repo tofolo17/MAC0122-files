@@ -28,7 +28,7 @@ class MaxHeap:
         m, j = 0, 0
         for el in v:
             s += f'{el}\t'
-            if j % (2 ** m) == 0:
+            if j % (2**m) == 0:
                 j = 0
                 m += 1
                 s += '\n'
@@ -56,7 +56,10 @@ class MaxHeap:
 
         el = self.data[pos // 2]
         while el is not None and el < item:
-            self.data[pos // 2], self.data[pos] = self.data[pos], self.data[pos // 2]
+            self.data[pos // 2], self.data[pos] = (
+                self.data[pos],
+                self.data[pos // 2],
+            )
             pos = pos // 2
 
             el = self.data[pos // 2]
@@ -111,7 +114,7 @@ class MaxHeap:
             self.insira(el)
 
     def maxheap(self):
-        """ (MaxHeap) -> bool
+        """(MaxHeap) -> bool
         RECEBE um MaxHeap self.
         RETORNA True se self.data representa um max-heap e False
             em caso contrário.
@@ -140,13 +143,14 @@ class MaxHeap:
 
 
 def selecione_lst(v, n):
-    """ (list, int) -> int
+    """(list, int) -> int
     RECEBE uma lista v.
     RETORNA um índice i tal que v[i] é o maior elemento de v[0:n]
     """
     imax = n - 1
     for i in range(n - 1):
-        if v[i] > v[imax]: imax = i
+        if v[i] > v[imax]:
+            imax = i
     return imax
 
 

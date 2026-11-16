@@ -48,7 +48,9 @@ class Rede:
         if j != 0:
             if self.matriz[i][j - 1] == '0' and [i, j - 1] not in caminhos:
                 return self.procura_caminho(i, j - 1, caminhos)
-        if j != len(self.matriz[0]) - 1 and i != 0:  # Só precisa ir para lado se a linha diferir da primeira!
+        if (
+            j != len(self.matriz[0]) - 1 and i != 0
+        ):  # Só precisa ir para lado se a linha diferir da primeira!
             if self.matriz[i][j + 1] == '0' and [i, j + 1] not in caminhos:
                 return self.procura_caminho(i, j + 1, caminhos)
         return False

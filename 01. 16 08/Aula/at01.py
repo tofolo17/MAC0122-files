@@ -1,16 +1,16 @@
 """
-    Atividade 01 - funções em Python
+Atividade 01 - funções em Python
 
-    Indique o código do Grupo (deveria ser o mesmo da computador
-    que você usou no CEC, como A, B, C etc.).
+Indique o código do Grupo (deveria ser o mesmo da computador
+que você usou no CEC, como A, B, C etc.).
 
-    GRUPO: S
+GRUPO: S
 
-    Liste a seguir os nomes completos dos membros do time que participaram dessa atividade presencialmente:
+Liste a seguir os nomes completos dos membros do time que participaram dessa atividade presencialmente:
 
-    - Vicenzo Carlim de Sousa
-    - Gustavo Valencio Tofolo
-    - Rennisson Davi Domingos Alves
+- Vicenzo Carlim de Sousa
+- Gustavo Valencio Tofolo
+- Rennisson Davi Domingos Alves
 
 """
 
@@ -102,7 +102,7 @@ def main():
 
 # ----------------------------------------------------
 def fat(n):
-    """ (int) -> int
+    """(int) -> int
 
     Recebe um inteiro n e retorna n!
     Exemplos:

@@ -32,8 +32,12 @@ class Array3D:
 
     def get_pos(self, k):
         andar = k // (self.linhas * self.colunas)  # correto
-        linha = (k - andar * self.linhas * self.colunas) // self.colunas  # correto
-        coluna = (k - andar * self.linhas * self.colunas) % self.colunas  # feito incorreto na prova
+        linha = (
+            k - andar * self.linhas * self.colunas
+        ) // self.colunas  # correto
+        coluna = (
+            k - andar * self.linhas * self.colunas
+        ) % self.colunas  # feito incorreto na prova
 
         return andar, linha, coluna
 

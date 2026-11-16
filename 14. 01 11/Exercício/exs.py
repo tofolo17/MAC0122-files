@@ -20,7 +20,9 @@ def buscaB(v, x):
 
 
 def crie_dicionario(lst, n):
-    dicio = Dicio()
+    # Dicio: classe de dicionário fornecida no material da disciplina
+    # (não incluída aqui; veja classes/dicioB.py para uma versão própria)
+    dicio = Dicio()  # noqa: F821
     for i in range(n):
         chave = lst[i]
         valor = dicio.get(chave)

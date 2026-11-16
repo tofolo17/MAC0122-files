@@ -6,8 +6,8 @@ def main():
 
 
 def potencia(base, expoente):
-    """ (float, int) -> float
-    retorna a base elevado ao expoente inteiro """
+    """(float, int) -> float
+    retorna a base elevado ao expoente inteiro"""
 
     r = 1
     for i in range(expoente):

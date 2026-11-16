@@ -23,11 +23,11 @@ def main():
             if i == 0:
                 slice_01 = init_state[0:2]
             else:
-                slice_01 = init_state[i - 1:i + 2]
+                slice_01 = init_state[i - 1 : i + 2]
             if j == 0:
                 slice_02 = slice_01[:, 0:2]
             else:
-                slice_02 = slice_01[:, j - 1:j + 2]
+                slice_02 = slice_01[:, j - 1 : j + 2]
             s = slice_02.sum() - cell
 
             if cell == 0 and s == 3:

@@ -3,10 +3,7 @@ import pytest
 from classes.array2d import Array2D
 
 # Parâmetros
-ARRAY_CONFIG = [
-    [(3, 3), 3],
-    [(2, 3), 1.7]
-]
+ARRAY_CONFIG = [[(3, 3), 3], [(2, 3), 1.7]]
 
 # Valores esperados
 SIZE = [9, 6]

@@ -1,5 +1,6 @@
 # https://www.geeksforgeeks.org/quick-sort/
 
+
 def partition(array, low, high):
     # Choose the rightmost element as pivot
     pivot = array[high]
@@ -16,11 +17,11 @@ def partition(array, low, high):
             i = i + 1
 
             # Swapping element at i with element at j
-            (array[i], array[j]) = (array[j], array[i])
+            array[i], array[j] = (array[j], array[i])
 
     # Swap the pivot element with
     # e greater element specified by i
-    (array[i + 1], array[high]) = (array[high], array[i + 1])
+    array[i + 1], array[high] = (array[high], array[i + 1])
 
     # Return the position from where partition is done
     return i + 1

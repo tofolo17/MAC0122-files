@@ -16,5 +16,4 @@ for i in range(len(lista)):
         minimo = v
         indice = i
 
-if __name__ == "__main__":
-    main()
+print(f'Menor valor: {minimo} (índice {indice})')

@@ -33,7 +33,7 @@ def busca_binariaR(v, x):
         return m
 
     if v[m] < x:
-        return m + 1 + busca_binariaR(v[m + 1:], x)
+        return m + 1 + busca_binariaR(v[m + 1 :], x)
     else:
         return busca_binariaR(v[:m], x)
 

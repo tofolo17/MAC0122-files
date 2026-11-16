@@ -22,7 +22,7 @@ def palavras(texto):
             em_palavra = True
         else:
             if inicio != -1:
-                p.append(texto[inicio: i])
+                p.append(texto[inicio:i])
 
             inicio = -1
             em_palavra = False

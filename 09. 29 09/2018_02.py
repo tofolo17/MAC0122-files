@@ -7,7 +7,7 @@ def main():
 
 
 def f(x):
-    return x ** 0.5
+    return x**0.5
 
 
 def forca_bruta(v, n):

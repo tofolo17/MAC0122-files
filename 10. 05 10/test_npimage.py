@@ -1,4 +1,4 @@
-import os
+from pathlib import Path
 
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
@@ -6,12 +6,13 @@ import numpy as np
 
 from classes.npimage import NPImagem
 
-os.chdir('..')
+# Pasta images/ na raiz do repositório
+IMAGES = Path(__file__).resolve().parent.parent / 'images'
 
 
 def main():
     # Declaração de Elvis
-    f_name = 'images/elvis.jpg'
+    f_name = IMAGES / 'elvis.jpg'
     image = mpimg.imread(f_name)
     gray = np.array(image)[:, :, 2]
 
@@ -24,7 +25,7 @@ def main():
     """
 
     # Declaração de Einstein
-    f_name = 'images/einstein-colorida.jpg'
+    f_name = IMAGES / 'einstein-colorida.jpg'
     image = mpimg.imread(f_name)
     gray = np.array(image)[:, :, 2]
 
@@ -76,4 +77,6 @@ def main():
     exit()
 
 
-main()
+# Script de demonstração (não é um teste do pytest)
+if __name__ == '__main__':
+    main()

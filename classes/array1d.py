@@ -1,5 +1,6 @@
 # Testes de aula obrigatórios para envio
 
+
 def main():
     print("Testes da classe Array1D\n")
 
@@ -56,7 +57,7 @@ class Array1D:
         return self + other
 
     def __rsub__(self, other):
-        return - (self - other)
+        return -(self - other)
 
     def __neg__(self):
         n = len(self.dados)

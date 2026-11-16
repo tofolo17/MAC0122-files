@@ -1,5 +1,11 @@
-from ex00 import *
-from ex01 import *
+import sys
+from pathlib import Path
+
+# Permite importar os módulos vizinhos (ex00, ex01) no pytest
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from ex00 import *  # noqa: E402, F403
+from ex01 import *  # noqa: E402, F403
 
 
 def test_pal():

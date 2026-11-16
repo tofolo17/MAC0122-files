@@ -20,6 +20,7 @@ while e < d:  # 1#
         d = m
 return None
 """
+
 import random
 
 

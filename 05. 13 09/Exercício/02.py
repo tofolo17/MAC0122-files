@@ -11,7 +11,9 @@ def main():
     print(f"f) {_02('a a x x x a x a')}\n")
     print(f"g) {_02('c b y z a x x a')}\n")
     print(f"h) {_02('a x x a')}\n")
-    print(f"i) {_02('[’a’, ’b’, ’y’, ’c’, ’a’, ’x’, ’z’, ’c’, ’b’, ’y’, ’z’, ’-1’, ’x’]')}\n")
+    print(
+        f"i) {_02('[’a’, ’b’, ’y’, ’c’, ’a’, ’x’, ’z’, ’c’, ’b’, ’y’, ’z’, ’-1’, ’x’]')}\n"
+    )
 
 
 def _02(s):
